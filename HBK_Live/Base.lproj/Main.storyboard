@@ -1,24 +1,161 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <deployment version="2048" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gax-PT-p0X"/>
+                        <viewControllerLayoutGuide type="bottom" id="jk7-H1-5ii"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nf0-ou-tVQ">
+                                <rect key="frame" x="137" y="303.5" width="100" height="60"/>
+                                <color key="backgroundColor" red="1" green="0.1281391285" blue="0.14585888759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="3Km-8d-wki"/>
+                                    <constraint firstAttribute="height" constant="60" id="lh9-DM-6tX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="开始直播">
+                                    <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="GdE-Yt-Z1F" kind="presentation" id="jQU-YL-Fal"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TuB-yE-Ckh">
+                                <rect key="frame" x="137" y="413.5" width="100" height="60"/>
+                                <color key="backgroundColor" red="1" green="0.1281391285" blue="0.14585888759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="看直播">
+                                    <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="P8q-4B-28X" kind="presentation" id="qEp-EM-EDH"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <constraints>
+                            <constraint firstItem="TuB-yE-Ckh" firstAttribute="height" secondItem="nf0-ou-tVQ" secondAttribute="height" id="SEZ-Qr-oNN"/>
+                            <constraint firstItem="TuB-yE-Ckh" firstAttribute="leading" secondItem="nf0-ou-tVQ" secondAttribute="leading" id="Ug2-Lj-1SM"/>
+                            <constraint firstItem="nf0-ou-tVQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="W40-IT-G8U"/>
+                            <constraint firstItem="TuB-yE-Ckh" firstAttribute="top" secondItem="nf0-ou-tVQ" secondAttribute="bottom" constant="50" id="fv4-LU-bvx"/>
+                            <constraint firstItem="nf0-ou-tVQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="jji-lU-G8h"/>
+                            <constraint firstItem="TuB-yE-Ckh" firstAttribute="width" secondItem="nf0-ou-tVQ" secondAttribute="width" id="wYS-eU-Gou"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="frz-yN-SRw"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="456.80000000000001" y="117.39130434782609"/>
+        </scene>
+        <!--Live Player View Controller-->
+        <scene sceneID="lrV-ds-8FV">
+            <objects>
+                <viewController id="P8q-4B-28X" customClass="HBK_LivePlayerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5Id-wC-Vpd"/>
+                        <viewControllerLayoutGuide type="bottom" id="JWe-YD-hn0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NvS-Eh-Ogy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RUM-Uk-egk">
+                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="88y-tO-ydc"/>
+                                    <constraint firstAttribute="width" constant="60" id="ZMQ-9D-JY7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="返回">
+                                    <color key="titleColor" red="1" green="0.1281391285" blue="0.14585888759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="back:" destination="P8q-4B-28X" eventType="touchUpInside" id="bt2-7V-1hZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="RUM-Uk-egk" firstAttribute="leading" secondItem="NvS-Eh-Ogy" secondAttribute="leading" id="hTz-sl-0Hj"/>
+                            <constraint firstItem="RUM-Uk-egk" firstAttribute="top" secondItem="NvS-Eh-Ogy" secondAttribute="top" id="mH0-gq-S2T"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jry-F6-pYr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1492" y="591"/>
+        </scene>
+        <!--Live Show View Controller-->
+        <scene sceneID="5AI-he-BOj">
+            <objects>
+                <viewController id="GdE-Yt-Z1F" customClass="HBK_LiveShowViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xzc-XW-vjj"/>
+                        <viewControllerLayoutGuide type="bottom" id="AsP-ny-3nv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3L7-gF-zPQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7oh-Dd-lVC">
+                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="imh-Qy-6Di"/>
+                                    <constraint firstAttribute="width" constant="60" id="uUs-rt-G3Q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="返回">
+                                    <color key="titleColor" red="1" green="0.1281391285" blue="0.14585888759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="back_StopLive:" destination="GdE-Yt-Z1F" eventType="touchUpInside" id="Swu-Hz-OBE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpM-xk-gNw">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.1281391285" blue="0.14585888759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="cuG-xd-HbO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="开始直播">
+                                    <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="start_Live:" destination="GdE-Yt-Z1F" eventType="touchUpInside" id="rTq-nz-jlL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dpM-xk-gNw" firstAttribute="bottom" secondItem="AsP-ny-3nv" secondAttribute="top" id="3Ub-L0-cBo"/>
+                            <constraint firstAttribute="trailing" secondItem="dpM-xk-gNw" secondAttribute="trailing" id="8q9-Rh-Rei"/>
+                            <constraint firstItem="dpM-xk-gNw" firstAttribute="leading" secondItem="3L7-gF-zPQ" secondAttribute="leading" id="LUJ-nq-fqK"/>
+                            <constraint firstItem="7oh-Dd-lVC" firstAttribute="top" secondItem="3L7-gF-zPQ" secondAttribute="top" id="ZJa-rc-Nfa"/>
+                            <constraint firstItem="7oh-Dd-lVC" firstAttribute="leading" secondItem="3L7-gF-zPQ" secondAttribute="leading" id="vbM-Ga-57b"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FD7-dU-4vQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1538" y="-73"/>
         </scene>
     </scenes>
 </document>

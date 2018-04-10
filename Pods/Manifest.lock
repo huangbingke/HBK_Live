@@ -1,0 +1,18 @@
+PODS:
+  - GPUImage (0.1.7)
+  - LFLiveKit (2.6)
+  - librtmp-iOS (1.1.0)
+
+DEPENDENCIES:
+  - GPUImage (~> 0.1.7)
+  - LFLiveKit (~> 2.6)
+  - librtmp-iOS (~> 1.1.0)
+
+SPEC CHECKSUMS:
+  GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
+  LFLiveKit: 2219563721f8aa0f188effc3395a06e2d53b23f2
+  librtmp-iOS: bfe6a2978e01ac97160ede5d3ccde9e3c1d1ee58
+
+PODFILE CHECKSUM: ccba706bde266587c0c70881cdc643f3d6f2dc9b
+
+COCOAPODS: 1.4.0.rc.1
